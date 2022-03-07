@@ -6304,8 +6304,8 @@ h1, h2, h3, h4,
 .site-hero {
   margin-bottom: 0rem; }
   .site-hero, .site-hero .row {
-    min-height: 400px;
-    height: calc(100vh - 95px); }
+    min-height: 450px;
+    height: calc(20vh - 95px); }
   .site-hero.inner, .site-hero.inner .row {
     min-height: 400px;
     height: calc(50vh - 95px); }
@@ -6319,7 +6319,7 @@ h1, h2, h3, h4,
     -webkit-text-fill-color: transparent; }
     @media (min-width: 992px) {
       .site-hero h1 {
-        font-size: 4rem; } }
+        font-size: 2rem; } }
   .site-hero .caption {
     color: #fff; }
     @media (min-width: 768px) {

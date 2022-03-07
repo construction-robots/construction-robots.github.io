@@ -17,7 +17,86 @@ img.organizer {
     min-width: 250px;
     max-width: 250px;
 }
+.mySlides {
+    display: none;
+}
+img.slides {
+    /*min-height: 200px;*/
+    /*height: 400px;*/
+    /*height: calc(100% - 750px);*/
+    /*width: 50%;*/
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: device-width;
+  height: device-height;
+  align: middle;
+  max-width: 1000px;
+  max-height: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
 </style>
+<script>
+var slideIndex = 0;
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+window.addEventListener('load', function() {
+    console.log('All assets are loaded')
+    showSlides();
+})
+</script>
 </head>
 <body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 <div class="site-wrap">
@@ -40,7 +119,7 @@ img.organizer {
 <div class="container-fluid">
 <div class="row align-items-center">
 <div class="col-11 col-xl-2">
-<h1 class="mb-0"><a href="#" class="text-white h2 mb-0">ICRA<span class="text-primary">Workshop</span> </a></h1>
+<h1 class="mb-0"><a href="#" class="text-white h2 mb-0">ICRA<span class="text-primary">Workshop</span>2022</a></h1>
 </div>
 <div class="col-12 col-md-10 d-none d-xl-block">
 <nav class="site-navigation position-relative text-right" role="navigation">
@@ -60,18 +139,53 @@ img.organizer {
 </header></div>
 
 <div class="site-section site-hero" id="home">
-<div style="background-image: url(workshop_files/excavator.png);background-repeat:no-repeat;">
+<!--div style="background-image: url(workshop_files/excavator.png);background-repeat:no-repeat;"-->
 <div class="container">
 <div class="row align-items-center">
 <div class="col-md-10">
-<span class="d-block mb-3 caption aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">ICRA 2022</span>
+<!--span class="d-block mb-3 caption aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">ICRA 2022</span-->
 <h1 class="d-block mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">Future of Construction: Build Faster, Better, Safer - Together with Robots</h1>
 <span class="d-block mb-5 caption aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">May 23, 8:30 AM - 12:30 PM, Philadelphia, United States</span>
 </div>
 </div>
 </div>
 </div>
-</div>
+        <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow1.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow2.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow3.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow4.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow5.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow6.jpg">
+        </div>
+
+        </div>
+
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
 <div class="site-section" id="overview">
 <div class="container">
 <div class="row mb-5">
