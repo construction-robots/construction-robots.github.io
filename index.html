@@ -59,9 +59,9 @@ img.slides {
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 5.5s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 5.5s;
 }
 
 @-webkit-keyframes fade {
@@ -90,7 +90,7 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 window.addEventListener('load', function() {
     console.log('All assets are loaded')
@@ -125,11 +125,13 @@ window.addEventListener('load', function() {
 <nav class="site-navigation position-relative text-right" role="navigation">
 <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
 <li class="active"><a href="#home" data-nav-section="home">Home</a></li>
-<li ><a href="#overview" data-nav-section="overview">Overview</a></li>
-<li ><a href="#papers" data-nav-section="papers">Call for Papers</a></li>
-<li ><a href="#speakers" data-nav-section="speakers">Speakers</a></li>
-<li ><a href="#program" data-nav-section="program">Program</a></li>
-<li ><a href="#organizers" data-nav-section="organizers">Organizers</a></li>
+<li><a href="#overview" data-nav-section="overview">Overview</a></li>
+<li><a href="#papers" data-nav-section="papers">Call for Papers</a></li>
+<li><a href="#challenge" data-nav-section="papers">HILTI Challenge</a></li>
+<li><a href="#speakers" data-nav-section="speakers">Speakers</a></li>
+<li><a href="#program" data-nav-section="program">Program</a></li>
+<li><a href="#organizers" data-nav-section="organizers">Organizers</a></li>
+<li><a href="#sponsors" data-nav-section="organizers">Sponsors</a></li>
 </ul>
 </nav>
 </div>
@@ -198,6 +200,12 @@ window.addEventListener('load', function() {
 <p>To tackle these challenging issues, this workshop aims to facilitate discussion on technology that will enable advanced robotics for future construction workplaces with an emphasis on robust perception and navigation methods, learning-based task and motion planning, and safety-focused robot-worker interactions. In line with the ICRA 2022 Future of Work theme, this workshop will provide a venue for academics and industry practitioners to create a vision for robotics in construction work and ensure equitable participation in planning for the future of construction workplaces. The half-day workshop will feature presentations by distinguished speakers from both industry and academia as well as interactive activities in the form of poster sessions, debates, and guided group discussions.</p>
 <!--p>The construction industry is one of the world economy’s largest sectors, employing about 7 percent of the world’s working-age population and spending $10 trillion on construction-related goods and services every year. However, according to McKinsey Global Institute’s digitization index, construction comes second to last in the digitization index in the United States, while in Europe, it is in last position on the index. Globally, productivity growth in construction has averaged only 1 percent a year, compared with growth of 2.8 percent for the total world economy and 3.6 percent in the case of manufacturing. Despite significant advances in robotics and automation technology, these technologies are still poorly studied and poorly adopted in the construction industry and has led to a stagnation in growth of productivity.</p>
 <p>This workshop aims to bridge the gap between robotics researchers and the construction industry and potentially lead to increased partnerships between academia and industry aimed at improving and enhancing available technology for construction automation. Construction robotics is an emerging topic in robotics that poses new problems and new domains in robotics due to the unstructured and cluttered environment in construction sites. Robotics and automation in construction can play a big part in emerging economies by making construction work more efficient, safe, and reliable.</p-->
+<p>The workshop will be held as a hybrid event, with in-person activities as well as a synchronous Zoom session.
+In-person ICRA attendees who would like to
+participate in the workshop will be required
+to register for ICRA with the workshop access option. Remote registration for the
+conference and workshops is free. More details about the
+registration fees are available on the <a href="https://www.icra2022.org/registration/registration-fees">ICRA website</a>.</p>
 </div>
 </div>
 </div>
@@ -225,6 +233,7 @@ Questions regarding the paper submission should be directed to <a href="mailto:c
 <br><br>
 The topics of interest include, but are not limited to, the following:
 </p>
+<p>
 <ul>
 <li>Safe human-robot collaboration in construction tasks</li>
 <li>Manipulation, path planning, navigation in dynamic and cluttered environments</li>
@@ -234,7 +243,26 @@ The topics of interest include, but are not limited to, the following:
 <li>Wearable robotics / exoskeleton for construction workers</li>
 <li>Drone technology for construction applications</li>
 </ul>
+</p>
+<div><h4>Best paper award:</h4></div>
+<p>
+Submitted papers will be considered for the best paper award based on technical merit, originality, and potential impact on the field. The best paper award comes with a cash prize generously sponsored by <a href="https://www.hilti.com/">HILTI</a>.
+</p>
 </div>
+</div>
+</div>
+</div>
+<div class="site-section" id="challenge">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4 aos-init" data-aos="fade-up" data-aos-delay="0">
+<div class="site-section-heading">
+<h2>HILTI Challenge</h2>
+</div>
+</div>
+<p>
+This workshop will involve a Simultaneous Localization and Mapping (SLAM) challenge organized by <a href="https://www.hilti.com/">HILTI</a>. Details about the challenge will be released soon. 
+</p>
 </div>
 </div>
 </div>
@@ -382,15 +410,6 @@ Prof. Myung leads the Urban Robotics Lab at KAIST and has successfully developed
 <div class="row align-items-stretch">
 <div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">09:00</span> <span>AM</span></div>
 <div class="col-md-9">
-<h2 class="text-white">Invited speaker: industry</h2>
-<span>Noah Ready-Campbell (Built Robotics)</span>
-</div>
-</div>
-</div>
-<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
-<div class="row align-items-stretch">
-<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">09:20</span> <span>AM</span></div>
-<div class="col-md-9">
 <h2 class="text-white">Invited speaker: academic</h2>
 <span>Dr. Michael Milford</span>
 </div>
@@ -398,7 +417,7 @@ Prof. Myung leads the Urban Robotics Lab at KAIST and has successfully developed
 </div>
 <div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
 <div class="row align-items-stretch">
-<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">09:40</span> <span>AM</span></div>
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">09:20</span> <span>AM</span></div>
 <div class="col-md-9">
 <h2 class="text-white">Invited speaker: industry</h2>
 <span>Dr. Bharath Sankaran (Scaled Robotics)</span>
@@ -407,10 +426,19 @@ Prof. Myung leads the Urban Robotics Lab at KAIST and has successfully developed
 </div>
 <div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
 <div class="row align-items-stretch">
-<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">10:00</span> <span>AM</span></div>
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">09:40</span> <span>AM</span></div>
 <div class="col-md-9">
 <h2 class="text-white">Invited speaker: academic</h2>
 <span>Dr. Hyun Myung</span>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">10:00</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Invited speaker: industry</h2>
+<span>Noah Ready-Campbell (Built Robotics)</span>
 </div>
 </div>
 </div>
@@ -426,7 +454,7 @@ Prof. Myung leads the Urban Robotics Lab at KAIST and has successfully developed
 <div class="row align-items-stretch">
 <div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">10:40</span> <span>AM</span></div>
 <div class="col-md-9">
-<h4 class="text-white">Poster session + SLAM challenge results</h4>
+<h4 class="text-white">Poster session + HILTI challenge results</h4>
 </div>
 </div>
 </div>
@@ -501,14 +529,16 @@ Prof. Myung leads the Urban Robotics Lab at KAIST and has successfully developed
 </div>
 </div>
 </div>
-<div class="site-section" id="acknowledgements">
+<div class="site-section" id="sponsors">
 <div class="container">
 <div class="row mb-5">
 <div class="col-lg-4">
 <div class="site-section-heading aos-init" data-aos="fade-up">
-<h2>Acknowledgements</h2>
+<h2>Sponsors</h2>
 </div>
 </div>
+<p>This workshop is made possible thanks to the generous sponsorship of the following industry partners:</p>
+<img src="./workshop_files/Hilti-Logo.jpg">
 </div>
 </div>
 </div>
@@ -517,7 +547,7 @@ Prof. Myung leads the Urban Robotics Lab at KAIST and has successfully developed
 <div class="row mb-5">
 <div class="col-md-4">
 <h2 class="footer-heading text-uppercase mb-4">About Event</h2>
-<p>This workshop is made possible thanks to the organizing efforts of four different universities (Mississippi State University, Georgia Institute of Technology, North Dakota State University, New York University), and one industry partner (Baidu Research).</p>
+<p>This workshop co-organized by four different universities (Mississippi State University, Georgia Institute of Technology, North Dakota State University, New York University), and one industry partner (Baidu Research).</p>
 </div>
 <div class="col-md-3 ml-auto">
 <h2 class="footer-heading text-uppercase mb-4">Quick Links</h2>
