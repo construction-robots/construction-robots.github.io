@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IROS 2026 Construction Robotics Workshop</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="./workshop_files/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./workshop_files/fonts,_icomoon,_style.css+css,_bootstrap.min.css+css,_magnific-popup.css+css,_jquery-ui.css+css,_owl.carousel.min.css+css,_owl.theme.default.min.css+css,_bootstrap-datepicker.css+fonts,_flaticon,_font,_flaticon.css+css,_aos.css+css,_style.css.pagespee.css">
+<link rel="stylesheet" href="./workshop_files/icomoon.css">
+<style>
+img.speaker {
+    min-height: 200px;
+    max-height: 200px;
+}
+img.organizer {
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 250px;
+    max-width: 250px;
+}
+.mySlides {
+    display: none;
+}
+img.slides {
+    /*min-height: 200px;*/
+    /*height: 400px;*/
+    /*height: calc(100% - 750px);*/
+    /*width: 50%;*/
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
+.iframes {
+  text-align: center;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: device-width;
+  height: device-height;
+  align: middle;
+  max-width: 1000px;
+  max-height: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 5.5s;
+  animation-name: fade;
+  animation-duration: 5.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+<script>
+var slideIndex = 0;
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+window.addEventListener('load', function() {
+    console.log('All assets are loaded')
+    showSlides();
+})
+</script>
+</head>
+<body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+<div class="site-wrap">
+<div class="site-mobile-menu">
+<div class="site-mobile-menu-header">
+<div class="site-mobile-menu-close mt-3">
+<span class="icon-menu5 js-menu-toggle"></span>
+</div>
+</div>
+<div class="site-mobile-menu-body"><!--ul class="site-nav-wrap">
+<li class="active"><a href="#home" data-nav-section="home">Home</a></li>
+<li ><a href="#overview" data-nav-section="overview">Overview</a></li>
+<li ><a href="#papers" data-nav-section="papers">Call for Papers</a></li>
+<li ><a href="#speakers" data-nav-section="speakers">Speakers</a></li>
+<li ><a href="#program" data-nav-section="program">Program</a></li>
+<li ><a href="#organizers" data-nav-section="organizers">Organizers</a></li>
+</ul--></div>
+</div>
+<header class="site-navbar py-3" role="banner">
+<div class="container-fluid">
+<div class="row align-items-center">
+<div class="col-11 col-xl-2">
+<h1 class="mb-0"><a href="https://2026.ieee-iros.org/" class="text-white h2 mb-0">IROS<span class="text-primary">Workshop</span>2026</a></h1>
+</div>
+<div class="col-12 col-md-10 d-none d-xl-block">
+<nav class="site-navigation position-relative text-right" role="navigation">
+<ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+<li class="active"><a href="#home" data-nav-section="home">Home</a></li>
+<li><a href="#papers" data-nav-section="papers">Papers</a></li>
+<!--li><a href="#challenge" data-nav-section="challenge">Hilti Challenge</a></li-->
+<li><a href="#speakers" data-nav-section="speakers">Speakers</a></li>
+<li><a href="#program" data-nav-section="program">Program</a></li>
+<li><a href="#organizers" data-nav-section="organizers">Organizers</a></li>
+<li><a href="#sponsors" data-nav-section="sponsors">Sponsors</a></li>
+<li><a href="#previous" data-nav-section="previous">Previous Workshops</a></li>
+</ul>
+</nav>
+</div>
+<div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu5 h3"></span></a></div>
+</div>
+</div>
+</header></div>
+
+<div class="site-section site-hero" id="home">
+<!--div style="background-image: url(workshop_files/excavator.png);background-repeat:no-repeat;"-->
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-10">
+<h1 class="d-block mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">5th Workshop on Future of Construction: Collaborative Robots for Fabrication, Manufacturing, and Inspection.</h1>
+<span class="d-block caption aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">September 27, 2026</span>
+<span class="d-block caption aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">David L. Lawrence Convention Center, Pittsburgh, USA. Room 333</span>
+</div>
+</div>
+</div>
+</div>
+        <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow49.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow50.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow51.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow52.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow53.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow54.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow55.jpg">
+        </div>
+
+        <div class="mySlides fade">
+          <img class="slides" src="workshop_files/slideshow56.jpg">
+        </div>
+
+        </div>
+
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+<div class="site-section" id="overview">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4 aos-init" data-aos="fade-up" data-aos-delay="0">
+<div class="site-section-heading">
+<h2>Overview</h2>
+</div>
+</div>
+<p>The $10 trillion global construction industry has traditionally been a labor-intensive industry, yet it stands to benefit from autonomous robots that promise to deliver construction work that is more accurate and efficient compared to manual or conventional methods. However, the integration of automation and robotic technology into the construction workplace is faced with significant barriers including high cost of entry, safety concerns, inadequate training and knowledge about robotics, and poor performance of robots in dynamic, cluttered and unpredictable environments such as construction sites.</p>
+<p>To tackle these challenging issues, this workshop aims to facilitate discussion on technology that will enable advanced robotics for future construction workplaces with an emphasis on robust perception and navigation methods, learning-based task and motion planning, and safety-focused robot-worker interactions. 
+This workshop will provide a venue for academics and industry practitioners to create a vision for robotics in construction work and ensure equitable participation in planning for the future of construction workplaces.
+The half-day workshop will feature presentations by distinguished speakers from both industry and academia as well as interactive activities in the form of lightning talks, poster sessions, and panel discussions</p>
+<!--p>The construction industry is one of the world economy’s largest sectors, employing about 7 percent of the world’s working-age population and spending $10 trillion on construction-related goods and services every year. However, according to McKinsey Global Institute’s digitization index, construction comes second to last in the digitization index in the United States, while in Europe, it is in last position on the index. Globally, productivity growth in construction has averaged only 1 percent a year, compared with growth of 2.8 percent for the total world economy and 3.6 percent in the case of manufacturing. Despite significant advances in robotics and automation technology, these technologies are still poorly studied and poorly adopted in the construction industry and has led to a stagnation in growth of productivity.</p>
+<p>This workshop aims to bridge the gap between robotics researchers and the construction industry and potentially lead to increased partnerships between academia and industry aimed at improving and enhancing available technology for construction automation. Construction robotics is an emerging topic in robotics that poses new problems and new domains in robotics due to the unstructured and cluttered environment in construction sites. Robotics and automation in construction can play a big part in emerging economies by making construction work more efficient, safe, and reliable.</p-->
+<!--The workshop will be held mainly as an in-person event, though the session will be live-streamed through the InfoVaya Conference App.
+In-person ICRA attendees who would like to participate in the workshop will be required to register for ICRA with the workshop access option.
+Remote participants are required to pay the virtual registration fee to get access to the livestream feed.
+More details about the registration fees are available on the <a href="">ICRA website</a>.</p>-->
+</p>
+<p><i>(Virtual attendees) Join us using the following Zoom link:</i></p>
+<a href="https://us05web.zoom.us/j/82213560347?pwd=A5czwYKHPF7mAuVInFET6hxvdMoDJK.1">https://us05web.zoom.us/j/82213560347?pwd=A5czwYKHPF7mAuVInFET6hxvdMoDJK.1</a>
+</div>
+</div>
+</div>
+<div class="site-section" id="papers">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4 aos-init" data-aos="fade-up" data-aos-delay="0">
+<div class="site-section-heading">
+<h2>Workshop Papers</h2>
+</div>
+</div>
+<p>This workshop will solicit contributions in two tracks: (i) the Paper Track and (ii) the Poster-only Track.
+</p>
+<p>
+<a href="javascript:void(0);">Paper Track:</a>
+This track consists of contributed papers that constitute novel, original research in construction robotics or closely related fields.
+Contributed papers cannot take the form of an existing paper that is published or under review.
+Contributed papers should be in the form of extended abstracts (about 3-4 pages in <a href="https://ras.papercept.net/conferences/support/support.php">IEEE conference paper format</a>, including references).
+Optionally, authors may submit a link to a 2-3 minute video presentation of their paper if their work involves visualization, robot operation etc.
+The accepted contributed papers will be made publicly available on the workshop website.
+Authors of selected papers will be invited to extend their work into a journal paper for an upcoming Special Collection at the Journal for Computing in Civil Engineering.
+</p>
+<p>
+<ul>
+<li>LaTeX template: <a href="https://ras.papercept.net/conferences/support/files/ieeeconf.zip">ieeeconf.zip</a> (select US Letter paper in root.tex)</li>
+<li>MS-Word template: <a href="https://ras.papercept.net/conferences/support/files/ieeeconf_letter.dot">ieeeconf_letter.dot</a></li>
+</ul>
+</p>
+<p>
+<a href="javascript:void(0);">Poster-only Track:</a>
+This track consists of posters that can be either based on a prior publication or novel work.
+Authors with an original paper may submit it to both tracks (paper and poster).
+Accepted posters will be presented during the poster session on the day of the workshop in the hallway outside the conference room.
+Authors are expected to print out and bring their own posters to the workshop, though poster boards will be provided.
+<!--Poster boards are 4'x 4'.-->
+There is no specific template for the posters. You should choose the format that best represents your research work.
+</p>
+<p>
+Submissions can be made through <a href="https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/FoC">OpenReview</a>, where the paper or poster can be uploaded in PDF format. 
+In the OpenReview submission form, please specify which track you are submitting to and provide a video URL (if applicable).
+Deadlines given below are in <a href="https://time.is/Anywhere_on_Earth">Anywhere on Earth Time</a>.
+Questions regarding the paper submission should be directed to <a href="mailto:chenjingdao@cse.msstate.edu">chenjingdao@cse.msstate.edu</a>. 
+</p>
+<p>
+Camera-ready paper submissions should also be made through <a href="https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/FoC">OpenReview</a>.
+</p>
+<div><h4>Paper/Poster Submission Deadline: <strike>August 24</strike> August 31, 2026, 11:59 PM AET</h4></div>
+<div><h4>Paper/Poster Acceptance Notification: <strike>September 7</strike> September 14, 2026, 11:59 PM AET</h4></div>
+<div><h4>Camera Ready Paper/Poster Deadline: <strike>September 14</strike> September 21, 2026, 11:59 PM AET</h4></div>
+<div>
+<br>
+<p>If you require an early decision notification due to having to apply for a visa, please contact <a href="mailto:chenjingdao@cse.msstate.edu">chenjingdao@cse.msstate.edu</a></p>
+<p>
+<br>
+The topics of interest include, but are not limited to, the following:
+</p>
+<p>
+<ul>
+<li>Safe human-robot collaboration in construction tasks</li>
+<li>Manipulation, path planning, navigation in dynamic and cluttered environments</li>
+<li>Robust perception algorithms in cluttered and unstructured environments</li>
+<li>Collaborative automation technology for heavy construction equipment</li>
+<li>Automation in construction logistics</li>
+<li>Wearable robotics / exoskeleton for construction workers</li>
+<li>Drone technology for construction applications</li>
+</ul>
+</p>
+
+<div><h4>Paper / Poster Awards</h4></div>
+<p>
+<!--Submitted papers (Paper Track only) will be considered for the best research awards based on technical merit, originality, and potential impact on the field.-->
+Submitted posters will be considered for Best Poster Awards, and in-person judging will take place on the day of the workshop.
+Best poster awards come with $500 in total cash prizes generously sponsored by <a href="https://raiserobotics.ai/">Raise Robotics</a> and <a href="https://bedrockrobotics.com/">Bedrock Robotics</a> (First place: $300, Second place $200).
+</p>
+<p>
+Poster #1: Toward Task-Level Multimodal Evaluation of Wearable Robots in Construction Worker Activities <br>
+<i>Xinyan Huang, Jingang Yi</i><br>
+<br>
+Poster #2: Autonomous Earthmoving: Classical Control Guidance Makes Long-Horizon Trenching Reliably Trainable<br>
+<i>Joseph Hewlett, Clodéric Mars, Evelin Fonseca Cruz, SaiKrishna Gottipati, Laszlo Kovacs, Adam Bognat, ManhTriet Hoang</i><br>
+<br>
+</p>
+
+<div class="col-12 border-top border-bottom py-5">
+<h4>System</h4>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Flying, Hopping and Rolling: Developing a Multi-Modal Robot for Efficient All Terrain Traversal<br>
+<i>Ryan Zazo, Pakpong Chirarattananon</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_25.pdf">Poster</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+RoboTC: a robotic platform for privacy-ware active thermal comfort data collection<br>
+<i>Weijia Cai, Zhengbo Zou</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_22.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+A Taxonomy of Construction Task Activities for Robot Workers<br>
+<i>Sadman Sakib, Zhangyi Peng, Yujie Pang, Yu Otsuki, Mohammad Abdullah Al Faruque</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_13.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+How should a scaffolding pole-climbing robot look?<br>
+<i>Jakob Pflugbeil, Henrik Ebel</i>
+</div>
+<div class="col"><span><a href=""></a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+SiteScope: An End-to-End Schedule-Driven Robotic Workflow for Construction Progress Monitoring<br>
+<i>Aklile T. Mengiste, Samuel A Prieto, Borja Garcia de Soto</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_5.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 border-top border-bottom py-5">
+<h4>Perception</h4>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+DeltaSeek: Toward Active Perception in Evolving Construction Environments<br>
+<i>Sanjay Acharjee, Md Nazmus Sakib</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_42.pdf">Paper</a></span></div>
+<div class="col"><span><a href="https://www.youtube.com/watch?v=WRCGMyO9eq0">Video</a></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Digital Twin-Guided Next-Best-View UAV Planning for Occlusion-Aware Building Inspection<br>
+<i>Hossein khandandel, Yining Wen, Kaiwen Chen</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_32.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Benchmarking Metric Depth for Construction Perception:  Industrial Rebar Scenes with Exact Synthetic Ground Truth<br>
+<i>Salman Hajizada, Diram Tabaa, Gianni A. Di Caro</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_28.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+ConsensusTAS: Self-Supervised Temporal Action Segmentation for Long-Horizon Construction Videos<br>
+<i>Xiaoshan Zhou, Yafei Sun</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_27.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Structural Features as Fiducial Marker Replacements for Multi-UAV Camera Pose Estimation in Construction Sites<br>
+<i>Ayenew Yihune Demeke, Youjin Jang, Inbae Jeong</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_20.pdf">Paper</a></span></div>
+<div class="col"><span><a href="https://ndusbpos-my.sharepoint.com/:v:/g/personal/y_jang_ndus_edu/IQAQrv1gmqBKQLWxA2Ktky85AYpSDe0kH-OSf3iPuAelpZo?e=6OOokz">Video</a></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Autoware in Construction: Gap Analysis and LiDAR Perception Toward Off-Road Autonomous Driving<br>
+<i>Yu Otsuki, Teja EMMEY, Sena Matsushita, Akiro Harada, Takeshi Miura</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_17.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Towards End-to-End Autonomous Wall Defect Inspection for Interior Finishing<br>
+<i>Alessio Lovato, Edoardo Romiti, Luca Muratore, Nikolaos G. Tsagarakis</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_10.pdf">Paper</a></span></div>
+<div class="col"><span><a href="https://bit.ly/4xo1hEz">Video</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Robust 2D Traversability Mapping for Construction AMRs via Failure-Mode-Aware Fusion of LiDAR Geometry and Monocular Semantics<br>
+<i>Manoj Karnekar, Om Mandhane, Gautham Ramkumar</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_6.pdf">Paper</a></span></div>
+<div class="col"><span><a href="https://youtu.be/Fbf5FhXpE9M">Video</a></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Comparing Soil Dynamic Models for the Estimation of Reaction Forces on a Virtual Excavator Bucket<br>
+<i>Eran Bamani Beeri, Solmon Jeong, Trevor Smith, Hermano Igo Krebs</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_3.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+VOID: VO-Integrated Deep Reinforcement  Learning for 3D Dynamic Obstacle Avoidance<br>
+<i>Yuting Tao, Mingyang Li, Peng Lu</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_1.pdf">Poster</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 border-top border-bottom py-5">
+<h4>Manipulation and Planning</h4>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Experimental Validation of Prefabricated Component Manipulation with a Lab-Scale Fully Constrained Cable-Driven Parallel Robot<br>
+<i>Yifang Liu, Joshua Harrington, Bryan Maldonado</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_40.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Spatiotemporal Constraint-Aware Assistance Motion Generation and Replanning for Human–Robot Collaborative Manipulation Tasks<br>
+<i>Takuya Kiyokawa, Taichi Kato, Kensuke Harada</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_38.pdf">Poster</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+ConstructSkill: Benchmarking Imitation Learning for Construction Manipulation with ManiSkill and Pretrained Encoders<br>
+<i>Shyam prasad reddy Kaitha, Zhaofeng Hu, Hongrui Yu, Ci-Jyun Liang</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_36.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Workers Demo, Robots Learn: Inverse Reinforcement Learning with Cross-Embodiment Videos for Construction Robots<br>
+<i>Lei Huang, Tong Ren, Zhengbo Zou</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_33.pdf">Poster</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Specification-Driven Dual-Reference Error Control for Sequential Robotic Floor Tiling<br>
+<i>CAI JUNXI, Yantao YU</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_31.pdf">Paper</a></span></div>
+<div class="col"><span><a href="https://github.com/CaiSir0075/DREC-Robotic-Tiling/releases/tag/v1.0">Video</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Skill Sequence Planning for Collaborative Multi-Robot Construction<br>
+<i>Xi Wang, Bo Fu, Carol Menassa, Vineet Kamat, Min Deng</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_30.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Learning to Build: Stability-Aware Generative Design for Modular Robotic Assembly<br>
+<i>Zhenghao Jin, Changliu Liu, Ruixuan Liu</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_26.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Autonomous Earthmoving: Classical Control Guidance Makes Long-Horizon Trenching Reliably Trainable<br>
+<i>Joseph Hewlett, Clodéric Mars, Evelin Fonseca Cruz, SaiKrishna Gottipati, Laszlo Kovacs, Adam Bognat, ManhTriet Hoang</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_23.pdf">Poster</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Charging-Constrained Decentralized Task Allocation for Persistent Multi-UAV Construction Monitoring<br>
+<i>Ayenew Yihune Demeke, Youjin Jang, Inbae Jeong</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_21.pdf">Paper</a></span></div>
+<div class="col"><span><a href="https://ndusbpos-my.sharepoint.com/:v:/g/personal/y_jang_ndus_edu/IQDTRT5IBv_UR7a8eDacKBdHAUKXfpdxaUC6PBJxHKBGFK0?e=dx8ROm">Video</a></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Human-Aware Adaptive Motion Planning with Lazy Tree Repair for Construction Robots<br>
+<i>Samiha Tasnim, Youjin Jang, Inbae Jeong</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_15.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Learning-Based Locomotion and Model-Based Jumping for Quadrupedal Robots<br>
+<i>Xinqi Li, Tianyang TANG, Peng Lu</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_7.pdf">Poster</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+KUKAloha: A General, Low-Cost, and Shared-Control based Teleoperation Framework for Construction Robot Arm<br>
+<i>Yifan Xu, Qizhang Shen, Vineet Kamat, Carol Menassa</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_2.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 border-top border-bottom py-5">
+<h4>Human-Robot Interaction</h4>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Bridging Machine-Observation Gaps with Wearable Kinematics-Aided Worker Tracking for Construction Safety<br>
+<i>Aderajew Tilahun, Tomonari Furukawa</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_41.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Human-Hand-Aware Vision-Language-Action Models for Safer Construction HRC<br>
+<i>Cynthia Zhang, Zhaofeng Hu, Ci-Jyun Liang</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_37.pdf">Poster</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+An Adaptive Framework for Modeling Human Robot Collaboration Training in Construction Robotics Education<br>
+<i>Ebenezer Olukanni, Abiola Abosede Akanmu</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_34.pdf">Poster</a></span></div>
+<div class="col"><span><a href="https://drive.google.com/file/d/1uc9xOebgm4Lqprb7-cf98LkvEYflMWCn/view?usp=sharing">Video</a></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Toward Task-Level Multimodal Evaluation of Wearable Robots in Construction Worker Activities<br>
+<i>Xinyan Huang, Jingang Yi</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_29.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Target-Specific Pathway Redundancy and Gateway Vulnerability in Construction Human–Robot Collaboration Competency Networks<br>
+<i>Ebenezer Olukanni, Abiola Abosede Akanmu</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_19.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Cycle-Aware Comparison of Acyclic and Reciprocal Competency Pathways for Construction Human–Robot Collaboration Training<br>
+<i>Ebenezer Olukanni, Abiola Abosede Akanmu</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_18.pdf">Paper</a></span></div>
+<div class="col"><span><a href="https://drive.google.com/file/d/1GIJjkGp1LngeYESNE_uoAzNMITlFjpx1/view?usp=sharing">Video</a></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Preliminary Evaluation of Human State-Aware Adaptive Robot Motion Control for a Quadruped Robot in Construction Workspaces<br>
+<i>Hardik Chauhan, Samiha Tasnim, Youjin Jang, Inbae Jeong</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_16.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Beyond Human-Derived Motion: Exploring Robot-Specific Execution for Construction Humanoids<br>
+<i>MinJun Chang, Taehyung Kim, Yong Cho, Francis Baek</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_14.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Toward Humanoid Robots in Construction: A Teleoperation Feasibility Study<br>
+<i>Parastoo Ali Pour, David R. Martin, Chang Min Hur, Bo Zhang, Tommy Zhou, Brandon Thomas Lichter, Shane Stanfield, Pramod Khargonekar, Mohammad Abdullah Al Faruque</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_11.pdf">Paper</a></span></div>
+<div class="col"><span><a href="https://www.youtube.com/watch?v=raST3AXUKDA">Video</a></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Immersive Virtual Reality for Evaluating Construction Worker Responses to Safety Hazards in Robotic Construction Workplaces<br>
+<i>Marvin Cheng, Hugo Elias Camargo, Ci-Jyun Liang</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_9.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+<div class="col-12 py-5">
+<div class="row">
+<div class="col-md-9">
+Human Factors in the Demolition Robot Hazard Zone: A Multi-Factor Virtual Reality Investigation<br>
+<i>Hugo Elias Camargo, Marvin Cheng</i>
+</div>
+<div class="col"><span><a href="papers/iros2026_8.pdf">Paper</a></span></div>
+<div class="col"><span></span></div>
+<div class="col"><span></span></div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--div class="site-section" id="challenge">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4 aos-init" data-aos="fade-up" data-aos-delay="0">
+<div class="site-section-heading">
+<h2>Hilti Challenge</h2>
+</div>
+</div>
+<p>
+This workshop will involve a Simultaneous Localization and Mapping (SLAM) competition organized by Hilti. 
+The challenge website may be accessed <a href="https://hilti-challenge.com/index.html">here</a>.
+</p>
+</div>
+</div>
+</div>
+</div-->
+<div class="site-section" id="speakers">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4 aos-init" data-aos="fade-up" data-aos-delay="0">
+<div class="site-section-heading">
+<h2>Speakers</h2>
+</div>
+</div>
+<div class="col-lg-5 mt-5 pl-lg-5 aos-init" data-aos="fade-up" data-aos-delay="0">
+</div>
+</div>
+<div class="row align-items-center speaker">
+<div class="col-lg-6 mb-5 mb-lg-0 aos-init" data-aos="fade" data-aos-delay="0">
+<script type="text/javascript" async="" src="./workshop_files/analytics.js"></script><script data-pagespeed-no-defer="">//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}
+var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;
+function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}
+function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),
+b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});
+function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=
+new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}
+function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});
+u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();
+
+pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','','-ilGEe-FWC',true,false,'NQphk-mfY1o');
+//]]></script><img class="speaker" src="./workshop_files/speaker21.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="col-lg-6 ml-auto">
+<h2 class="text-white mb-4 name aos-init" data-aos="fade-right" data-aos-delay="0">Marvin Cheng</h2>
+<div class="bio pl-lg-5">
+<span class="text-uppercase text-primary d-block mb-3 aos-init" data-aos="fade-right" data-aos-delay="0"><a href="https://marvin-cheng.github.io/">NIOSH</a></span>
+<p class="mb-4 aos-init" data-aos="fade-right" data-aos-delay="0">
+Marvin Cheng is a research engineer in the Center for Occupational Robotics Research at NIOSH. He is currently the Assistant Coordinator of the Center for the Occupational Robotics Research (CORR), and the Team Lead of the Safety Control Team at the National Institute for Occupational Safety and Health. His research interests include operation safety of robots in workspaces, human-robot interaction, control system, and cyberphysical systems used for human-robot collaboration.
+</p>
+<p data-aos="fade-right" data-aos-delay="0">
+</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center speaker">
+<div class="col-lg-6 mb-5 mb-lg-0 order-lg-2 aos-init" data-aos="fade" data-aos-delay="0">
+<img class="speaker" src="./workshop_files/speaker29.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3824774953" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="col-lg-6 ml-auto order-lg-1">
+    <h2 class="text-white mb-4 name aos-init" data-aos="fade-left" data-aos-delay="0">Robert Stuart-Smith</h2>
+<div class="bio pr-lg-5">
+<span class="text-uppercase text-primary d-block mb-3 aos-init" data-aos="fade-left" data-aos-delay="0"><a href="https://robertstuart-smith.com/">Georgia Institute of Technology</a></span>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Robert Stuart-Smith is an Associate Professor of Architecture, Director of the Digital Building Lab, and Steward of the Chuck Eastman Doctoral Fellowship Fund in Georgia Tech's School of Architecture, College of Design. Stuart-Smith also leads the Autonomous Manufacturing Lab across Georgia Tech and the University College London's Department of Computer Science, directing over $5.8 million in competitively funded research and collaborating with industry partners including Cemex, Skanska, Mace, Buro Happold, Arup, and the Manufacturing Technology Centre. 
+</p>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Stuart-Smith’s research sits at the intersection of AI/multi-agent approaches to robotic manufacturing, collective robotic construction and building design-engineering. His multidisciplinary work on Aerial Additive Manufacturing, published in Nature, demonstrated the world’s first in-flight additive manufacturing by cooperating drones. Across this body of work, he integrates robotic manufacturing with architectural design to address the environmental and economic costs of construction while expanding its cultural and aesthetic potential. 
+</p>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Prior to joining Georgia Tech, Stuart-Smith was faculty in the University of Pennsylvania's department of Architecture and Affiliate Faculty in the School of Engineering's GRASP Laboratory. At Penn, Stuart-Smith established an advanced robotic fabrication facility and was founding director of the Master of Science in Design: Robotics & Autonomous Systems (MSD-RAS), an interdisciplinary post-professional degree integrating artificial intelligence, robotic fabrication, and architecture. He has also taught at the AA School of Architecture in London, and sessionally at several institutions internationally. Stuart-Smith work is published in venues including Nature, Science Robotics, and AD Architectural Design, and exhibited internationally, including at the Venice, Tallinn, Beijing, and Prague Architecture Biennales, and also featured by BBC Click, New Scientist, Smithsonian, and Architizer.
+</p>
+<p data-aos="fade-left" data-aos-delay="0">
+</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center speaker">
+<div class="col-lg-6 mb-5 mb-lg-0 aos-init" data-aos="fade" data-aos-delay="0">
+<img class="speaker" src="./workshop_files/speaker30.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="118807499" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="col-lg-6 ml-auto order-lg-1">
+<h2 class="text-white mb-4 name aos-init" data-aos="fade-right" data-aos-delay="0">Olga Vysotska</h2>
+<div class="bio pr-lg-5">
+<span class="text-uppercase text-primary d-block mb-3 aos-init" data-aos="fade-left" data-aos-delay="0"><a href="https://cvg.ethz.ch/team/Dr-Olga-Vysotska">ETH Zurich</a></span>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Dr. Olga Vysotska is a postdoc in Computer Vision and Geometry Lab (CVG) and Robotic Systems Lab (RSL) labs with Dr. Marco Hutter at ETH Zurich. She received her Ph.D. from the University of Bonn at the lab of Photogrammetry and Robotics led by Prof. Cyrill Stachniss. She is a Design++ Fellow and focuses on robot and augmented reality device localization in construction environments. Olga has authored papers on SLAM with publicly available maps, spatio-temporal mapping, and visual place recognition in changing environments.
+</p>
+<p data-aos="fade-left" data-aos-delay="0">
+</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center speaker">
+<div class="col-lg-6 mb-5 mb-lg-0 order-lg-2 aos-init" data-aos="fade" data-aos-delay="0">
+<img class="speaker" src="./workshop_files/speaker31.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="118807499" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="col-lg-6 ml-auto order-lg-1">
+<h2 class="text-white mb-4 name aos-init" data-aos="fade-left" data-aos-delay="0">Bruce Alton</h2>
+<div class="bio pr-lg-5">
+<span class="text-uppercase text-primary d-block mb-3 aos-init" data-aos="fade-left" data-aos-delay="0"><a href="https://ca.linkedin.com/in/brucealton">RoBIM Technologies Inc.</a></span>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Bruce Alton is co-founder and CEO of RoBIM Technologies Inc. which is building a Physical AI-driven platform for robotic prefabrication of components used in residential, commercial and industrial construction projects.  RoBIM integrates simulation software, proprietary robotic fabrication capabilities and modular components to create configurable fabrication solutions for its customers in the prefabrication and modular building industry.
+</p>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+After several years of development by a leading team of construction automation experts and with five patents granted to date, RoBIM is launching its HIVE robotic fabrication platforms for North American, Asian and European markets.
+</p>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Bruce is also co-founder and partner at A-Partners Ventures Inc. which is an advisor to, co-founder of and investor in growth-oriented businesses. At A-Partners, Bruce built a portfolio of equity stakes in early-stage growth companies with an investment thesis of utilizing artificial intelligence and machine learning to solve Alberta’s business problems such as in construction, engineering and energy.
+</p>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Over his thirty-five-year career, Bruce has been a company founder, senior operating executive and investor and his roles have spanned real estate development, software services, advanced manufacturing and venture capital.  He also serves as a corporate board director and has been an invited speaker at entrepreneurship and technology conferences around the world.
+</p>
+<p data-aos="fade-left" data-aos-delay="0">
+</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center speaker">
+<div class="col-lg-6 mb-5 mb-lg-0 aos-init" data-aos="fade" data-aos-delay="0">
+<img class="speaker" src="./workshop_files/speaker32.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="118807499" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="col-lg-6 ml-auto order-lg-1">
+<h2 class="text-white mb-4 name aos-init" data-aos="fade-right" data-aos-delay="0">Joshua Manela</h2>
+<div class="bio pr-lg-5">
+<span class="text-uppercase text-primary d-block mb-3 aos-init" data-aos="fade-left" data-aos-delay="0"><a href="https://bedrockrobotics.com/">Bedrock Robotics</a></span>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Deploying end-to-end policies on real world construction sites: Bedrock Robotics is a robotics company automating the future of construction. During this talk, we will discuss Bedrock's mission, how far we've come in the last year, and the challenges of deploying real end-to-end mobile-manipulation policies on real-world construction sites. We'll explore issues related to emergent behaviors, handling the safety, and even some novel human-robot interaction problems we encountered! Finally, we'll discuss our current deployments and outline what's next for the future of autonomous construction.
+</p>
+<p data-aos="fade-left" data-aos-delay="0">
+</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center speaker">
+<div class="col-lg-6 mb-5 mb-lg-0 order-lg-2 aos-init" data-aos="fade" data-aos-delay="0">
+<img class="speaker" src="./workshop_files/speaker33.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="118807499" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="col-lg-6 ml-auto order-lg-1">
+<h2 class="text-white mb-4 name aos-init" data-aos="fade-left" data-aos-delay="0">Kenrick Tjandra</h2>
+<div class="bio pr-lg-5">
+<span class="text-uppercase text-primary d-block mb-3 aos-init" data-aos="fade-left" data-aos-delay="0"><a href="https://raiserobotics.ai/">Raise Robotics</a></span>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+Raise Robotics develops an automation platform to fits the demands and challenges of industrial environments.
+In this talk, Kenrick will share a perspective that doesn't always make it into the research room: "the wild" as an active construction site, where the staging area shifts daily and the building goes up floor by floor.  The talk will focus on the gap between what a robot is validated to do and what the field actually throws at it, and how that loop can be closed with every deployment.
+</p>
+<p data-aos="fade-left" data-aos-delay="0">
+</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center speaker">
+<div class="col-lg-6 mb-5 mb-lg-0 aos-init" data-aos="fade" data-aos-delay="0">
+<img class="speaker" src="./workshop_files/speaker34.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="118807499" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="col-lg-6 ml-auto order-lg-1">
+<h2 class="text-white mb-4 name aos-init" data-aos="fade-right" data-aos-delay="0">Bilal Sher</h2>
+<div class="bio pr-lg-5">
+<span class="text-uppercase text-primary d-block mb-3 aos-init" data-aos="fade-left" data-aos-delay="0"><a href="https://buildingdiagnosticrobotics.com/">Building Diagnostic Robotics</a></span>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+BDR is redefining how building inspections are done - turning manual, disruptive, and inconsistent processes into fast, digital, and actionable intelligence.
+We deliver autonomous roof inspections that help owners, contractors, and partners make smarter, safer decisions - all within 48 hours.
+Our platform transforms raw scan data into defensible, visual reports that empower better planning, faster repairs, and future-ready portfolios.
+</p>
+<p data-aos="fade-left" data-aos-delay="0">
+</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center speaker">
+<div class="col-lg-6 mb-5 mb-lg-0 order-lg-2 aos-init" data-aos="fade" data-aos-delay="0">
+<img class="speaker" src="./workshop_files/speaker36.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="118807499" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="col-lg-6 ml-auto order-lg-1">
+<h2 class="text-white mb-4 name aos-init" data-aos="fade-left" data-aos-delay="0">David Fan</h2>
+<div class="bio pr-lg-5">
+<span class="text-uppercase text-primary d-block mb-3 aos-init" data-aos="fade-left" data-aos-delay="0"><a href="https://www.fieldai.com/">Field AI</a></span>
+<p class="mb-4 aos-init" data-aos="fade-left" data-aos-delay="0">
+FieldAI introduces Field Foundation Models(FFMs), a new class of risk-aware robotics AI built around a Belief World Model (BWM). The BWM serves as the predictive engine that reasons under uncertainty, enabling robots to operate reliably in real-world environments even in the presence of unexpected events.
+</p>
+<p data-aos="fade-left" data-aos-delay="0">
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="site-section" id="program">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4 aos-init" data-aos="fade-up">
+<div class="site-section-heading">
+<h2>Program</h2>
+</div>
+</div>
+<div class="col-lg-6 mt-5 pl-lg-5 aos-init" data-aos="fade-up" data-aos-delay="0">
+</div>
+</div>
+<div class="row align-items-stretch program">
+<div class="col-12 border-top border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">08:30</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Workshop introduction and opening remarks</h2>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">08:40</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Invited speaker</h2>
+<span> Olga Vysotska - ETH Zurich </span><br>
+<iframe src="https://www.youtube.com/embed/MCd2Va7Rd7s" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">09:00</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Invited speaker</h2>
+<span> Marvin Cheng - NIOSH</span><br>
+<iframe src="https://www.youtube.com/embed/3C-SqndzoHk" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">09:20</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Invited speaker</h2>
+<span> Robert Stuart-Smith - Georgia Tech</span><br>
+<iframe src="https://www.youtube.com/embed/pV4VtzGud80" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">09:40</span> <span>PM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Spotlight paper presentations</h2>
+<span><i>KUKAloha: A General, Low-Cost, and Shared-Control based Teleoperation Framework for Construction Robot Arm</i></span><br>
+<iframe src="https://www.youtube.com/embed/1FUzH3CEdHU" frameborder="0" allowfullscreen></iframe><br><br>
+<span><i>Benchmarking Metric Depth for Construction Perception: Industrial Rebar Scenes with Exact Synthetic Ground Truth</i></span><br>
+<iframe src="https://www.youtube.com/embed/rK8jJJgVjQU" frameborder="0" allowfullscreen></iframe><br><br>
+<span><i>Specification-Driven Dual-Reference Error Control for Sequential Robotic Floor Tiling</i></span><br>
+<iframe src="https://www.youtube.com/embed/vy7HG8jFymE" frameborder="0" allowfullscreen></iframe><br><br>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">10:10</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Poster session + poster competition</h2>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">10:40</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white"><i>Coffee break | Poster session</i></h2>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">11:05</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Invited speaker</h2>
+<span> Bruce Alton  - RoBIM Technologies</span><br>
+<iframe src="https://www.youtube.com/embed/oy98d2aORW8" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">11:25</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Industry lightning talks</h2>
+<span> Joshua Manela - Bedrock Robotics </span><br>
+<span> Kenrick Tjandra - Raise Robotics </span><br>
+<span> Bilal Sher - Building Diagnostic Robotics </span><br>
+<span> Shehryar Khattak - Field AI </span><br>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">12:05</span> <span>AM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Panel Session</h2>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">12:25</span> <span>PM</span></div>
+<div class="col-md-9">
+<h2 class="text-white">Best poster awards announcement</h2>
+</div>
+</div>
+</div>
+<div class="col-12 border-bottom py-5 aos-init" data-aos="fade" data-aos-delay="0">
+<div class="row align-items-stretch">
+<div class="col-md-3 text-white mb-3 mb-md-0"><span class="h4">12:30</span> <span>PM</span></div>
+<div class="col-md-9">
+<h2 class="text-white"><i>Post-workshop Lunch Social</i></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="site-section" id="organizers">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4">
+<div class="site-section-heading aos-init" data-aos="fade-up">
+<h2>Organizers</h2>
+</div>
+</div>
+<div class="col-lg-6 mt-5 pl-lg-5 aos-init" data-aos="fade-up" data-aos-delay="0">
+</div>
+</div>
+<div class="row mb-5">
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer2.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="https://jingdao.github.io/">Dr. Jingdao Chen</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>Mississippi State University</p>
+<p>(Primary Contact Person) <a href="mailto:chenjingdao@cse.msstate.edu">chenjingdao@cse.msstate.edu</a>
+</p></div>
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer1.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="http://rical.ce.gatech.edu/">Dr. Yong K. Cho</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>Georgia Institute of Technology
+</p></div>
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer3.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="https://www.linkedin.com/in/inbae-jeong-a68275143">Dr. Inbae Jeong</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>North Dakota State University
+</p></div>
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer4.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="https://engineering.nyu.edu/faculty/chen-feng">Dr. Chen Feng</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>New York University
+</p></div>
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer12.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="https://www.xiwang.page/">Xi Wang</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>Texas A&amp;M University
+</p></div>
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer13.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="https://polarliang.net/">Ci-Jyun Liang</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>Stony Brook University
+</p></div>
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer18.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="https://yifutao.github.io/">Ethan Yifu Tao</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>University of Oxford
+</p></div>
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer19.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="https://ce.gatech.edu/directory/person/francis-baek">Francis Baek</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>Georgia Tech
+</p></div>
+<div class="col-md-6 col-lg-4 mb-5 mb-lg-0 blog-entry aos-init" data-aos="fade-up" data-aos-delay="0">
+<img class="organizer" src="./workshop_files/organizer20.jpg" alt="Image" class="img-fluid" data-pagespeed-url-hash="3530275032" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<h2 class="mb-4"><a href="https://zzzzzbbzzzzz.github.io/zhengbozou.github.io/">Zhengbo Zou</a></h2>
+<div class="mb-4 post-meta d-flex align-items-center">
+</div>
+<p>Columbia University
+</p></div>
+</div>
+</div>
+</div>
+<div class="site-section" id="sponsors">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4">
+<div class="site-section-heading aos-init" data-aos="fade-up">
+<h2>Sponsors</h2>
+</div>
+</div>
+<div><br><p>This workshop is made possible thanks to the generous sponsorship of the following organizations:</p></div>
+<p>
+<a href="https://raiserobotics.ai/"><img src="./workshop_files/raise_robotics_logo.jpg"></a>
+<a href="https://bedrockrobotics.com/"><img src="./workshop_files/bedrock_robotics_logo.jpg"></a>
+<a href="https://www.ieee-ras.org/construction-robotics"><img src="./workshop_files/ieee_ras_logo.jpg"></a>
+<!--a href="https://www.iaarc.org/"><img src="./workshop_files/IAARC-Logo.jpg"></a-->
+</div>
+</div>
+</div>
+<div class="site-section" id="previous">
+<div class="container">
+<div class="row mb-5">
+<div class="col-lg-4">
+<div class="site-section-heading aos-init" data-aos="fade-up">
+<h2>Previous Workshops</h2>
+</div>
+</div>
+<div class="col-12"><br><p>Links to previous iterations of this workshop at past conferences:</p></div>
+<ul>
+<li><a href="index.html">IEEE ICRA 2027</a></li>
+<li><a href="index2026.html">IEEE IROS 2026</a></li>
+<li><a href="index2025.html">IEEE ICRA 2025</a></li>
+<li><a href="index2024.html">IEEE ICRA 2024</a></li>
+<li><a href="index2023.html">IEEE ICRA 2023</a></li>
+<li><a href="index2022.html">IEEE ICRA 2022</a></li>
+</ul>
+</div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="container">
+<div class="row mb-5">
+<div class="col-md-4">
+<h2 class="footer-heading text-uppercase mb-4">About Event</h2>
+<p>This workshop is co-organized by five different universities (Mississippi State University, Georgia Institute of Technology, North Dakota State University, New York University, University of Oxford), and two industry partners (XYZ Reality, Hilti).</p>
+</div>
+<div class="col-md-3 ml-auto">
+<h2 class="footer-heading text-uppercase mb-4">Quick Links</h2>
+<ul class="list-unstyled">
+<li ><a href="#home" data-nav-section="home">Home</a></li>
+<li ><a href="#papers" data-nav-section="papers">Papers</a></li>
+<li ><a href="#speakers" data-nav-section="speakers">Speakers</a></li>
+<li ><a href="#program" data-nav-section="program">Program</a></li>
+<li ><a href="#organizers" data-nav-section="organizers">Organizers</a></li>
+<li ><a href="#sponsors" data-nav-section="sponsors">Sponsors</a></li>
+<li ><a href="#previous" data-nav-section="previous">Previous Workshops</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<!--h2 class="footer-heading text-uppercase mb-4">Connect with Us</h2>
+<p>
+<a href="#" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+<a href="#" class="p-2"><span class="icon-twitter"></span></a>
+<a href="#" class="p-2"><span class="icon-youtube"></span></a>
+<a href="#" class="p-2"><span class="icon-instagram"></span></a>
+</p-->
+Page visit statistics:
+<a href="https://www.revolvermaps.com/livestats/5t69pzytk5x/"><img src="http://rf.revolvermaps.com/h/m/a/0/ff0000/128/0/5t69pzytk5x.png" width="256" height="128" alt="Map" style="border:0;"></a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 text-center">
+<div class="border-top pt-5">
+<p>
+
+Copyright © <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+
+</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="./workshop_files/jquery-3.3.1.min.js"></script>
+<script src="./workshop_files/jquery-migrate-3.0.1.min.js+jquery-ui.js+popper.min.js.pagespeed.jc.mZYX_f2lG2.js"></script><script>eval(mod_pagespeed_xNT5kBh0Ix);</script>
+<script>eval(mod_pagespeed_R_6ikP5$G3);</script>
+<script>eval(mod_pagespeed_FCRKGPEuo0);</script>
+<script src="./workshop_files/bootstrap.min.js"></script>
+<script src="./workshop_files/owl.carousel.min.js+jquery.stellar.min.js+jquery.countdown.min.js+jquery.magnific-popup.min.js.pagespeed.jc.srJKA1VJha.js"></script><script>eval(mod_pagespeed_RjuCf2GC7l);</script>
+<script>eval(mod_pagespeed_XVAAAQUPcU);</script>
+<script>eval(mod_pagespeed_yFmijbZPCT);</script>
+<script>eval(mod_pagespeed_$LoiKMJSzA);</script>
+<script src="./workshop_files/bootstrap-datepicker.min.js+aos.js+main.js.pagespeed.jc.k9OyvIIqKB.js"></script><script>eval(mod_pagespeed_qaZO3A85ME);</script>
+<script>eval(mod_pagespeed_Qof5YZo6Nd);</script>
+<script>eval(mod_pagespeed_y01gFXM9m4);</script>
+
+<script async="" src="./workshop_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script defer="" src="./workshop_files/beacon.min.js" data-cf-beacon="{&quot;rayId&quot;:&quot;6815c10919430ffc&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;,&quot;version&quot;:&quot;2021.8.1&quot;,&quot;si&quot;:10}"></script>
+
+</body></html>
+
